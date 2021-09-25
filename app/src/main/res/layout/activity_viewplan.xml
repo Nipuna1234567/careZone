@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/txtView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFC633"
+    tools:context=".Viewplan" >
+
+    <Button
+        android:id="@+id/btnedit"
+        android:layout_width="386dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="52dp"
+        android:background="@drawable/button_custom"
+        android:backgroundTint="#FFFFFF"
+        android:text="Edit plan"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnadd"
+        android:layout_width="386dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_custom"
+        android:backgroundTint="#FFFFFF"
+        android:checkable="false"
+        android:text="Create new plan"
+        android:textColor="#000000"
+        android:textStyle="bold"
+
+        app:layout_constraintBottom_toTopOf="@+id/btnedit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.474"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="422dp"
+        android:layout_height="578dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="7dp"
+
+        />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="81dp"
+        android:layout_marginBottom="17dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
