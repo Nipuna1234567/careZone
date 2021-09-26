@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Delete"
+            android:exported="true" />
+        <activity
             android:name=".Change_password"
             android:exported="true" />
         <activity
