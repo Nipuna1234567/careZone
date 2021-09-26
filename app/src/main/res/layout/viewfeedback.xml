@@ -44,6 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="70dp"
         android:layout_marginEnd="57dp"
         android:layout_marginBottom="23dp"
         android:text="Your FeedBacks"
@@ -51,14 +52,15 @@
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="70dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
-        android:layout_width="389dp"
-        android:layout_height="290dp"
+        android:layout_width="382dp"
+        android:layout_height="232dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="284dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="312dp"
+        android:background="@color/cardview_shadow_start_color"
         android:orientation="vertical">
 
         <TextView
@@ -70,7 +72,7 @@
             android:layout_marginBottom="23dp"
             android:text="name : kamal"
             android:textColor="#050505"
-            android:textSize="20sp"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView6"
@@ -83,9 +85,22 @@
             android:text="Week : Week 1"
             android:textColor="#050505"
 
+
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Update" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Delete" />
         />
 
 
