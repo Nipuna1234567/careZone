@@ -46,13 +46,5 @@
         app:layout_constraintVertical_bias="0.65"
         app:srcCompat="@drawable/icon9" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="719dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
