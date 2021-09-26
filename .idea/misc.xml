@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/-MSI-/Desktop/Github/app/src/main/res/layout/activity_care_log.xml" value="0.11367753623188406" />
+        <entry key="..\:/Users/-MSI-/Desktop/Github/app/src/main/res/layout/activity_register.xml" value="0.21" />
+        <entry key="..\:/Users/THIMAL/OneDrive/Desktop/feedback/app/src/main/res/layout/feedback.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/THIMAL/OneDrive/Desktop/feedback/app/src/main/res/layout/singlerow.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/THIMAL/OneDrive/Desktop/feedback/app/src/main/res/layout/toolbar.xml" value="0.36666666666666664" />
 
         <entry key="..\:/Users/-MSI-/Desktop/Github/app/src/main/res/layout/activity_adddata.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/-MSI-/Desktop/Github/app/src/main/res/layout/activity_care_log.xml" value="0.21" />
@@ -27,12 +32,9 @@
         <entry key="..\:/projects/MADD1/careZone/app/src/main/res/layout/activity_adddata.xml" value="0.25" />
         <entry key="..\:/projects/MADD1/careZone/app/src/main/res/layout/activity_care_log.xml" value="0.32592592592592595" />
 
+
         <entry key="..\:/projects/MADD1/careZone/app/src/main/res/layout/activity_foods.xml" value="0.33" />
         <entry key="..\:/projects/MADD1/careZone/app/src/main/res/layout/activity_home.xml" value="0.15898825654923215" />
-        <entry key="..\:/projects/MADD1/careZone/app/src/main/res/layout/activity_main.xml" value="0.12092391304347826" />
-        <entry key="..\:/projects/MADD1/careZone/app/src/main/res/layout/activity_register.xml" value="0.32592592592592595" />
-        <entry key="..\:/projects/MADD1/careZone/app/src/main/res/layout/dialogcontent.xml" value="0.11956521739130435" />
-        <entry key="..\:/projects/MADD1/careZone/app/src/main/res/layout/singlerow.xml" value="0.11956521739130435" />
       </map>
     </option>
   </component>
