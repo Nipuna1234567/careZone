@@ -34,89 +34,89 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
     @Override
     protected void onBindViewHolder(@NonNull final myviewholder holder, final int position, @NonNull final model model)
     {
-       holder.name.setText(model.getName());
-       holder.category.setText(model.getCategory());
-       holder.description.setText(model.getDescription());
-       Glide.with(holder.img.getContext()).load(model.getPurl()).into(holder.img);
+        holder.name.setText(model.getName());
+        holder.category.setText(model.getCategory());
+        holder.description.setText(model.getDescription());
+        Glide.with(holder.img.getContext()).load(model.getPurl()).into(holder.img);
 
-                    holder.edit.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            final DialogPlus dialogPlus=DialogPlus.newDialog(holder.img.getContext())
-                                    .setContentHolder(new ViewHolder(R.layout.dialogcontent))
-                                    .setExpanded(true,1100)
-                                    .create();
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final DialogPlus dialogPlus=DialogPlus.newDialog(holder.img.getContext())
+                        .setContentHolder(new ViewHolder(R.layout.dialogcontent))
+                        .setExpanded(true,1100)
+                        .create();
 
-                            View myview=dialogPlus.getHolderView();
-                            final EditText purl=myview.findViewById(R.id.uimgurl);
-                            final EditText name=myview.findViewById(R.id.uname);
-                            final EditText category=myview.findViewById(R.id.ucategory);
-                            final EditText description=myview.findViewById(R.id.udescription);
-                            Button submit=myview.findViewById(R.id.usubmit);
+                View myview=dialogPlus.getHolderView();
+                final EditText purl=myview.findViewById(R.id.uimgurl);
+                final EditText name=myview.findViewById(R.id.uname);
+                final EditText category=myview.findViewById(R.id.ucategory);
+                final EditText description=myview.findViewById(R.id.udescription);
+                Button submit=myview.findViewById(R.id.usubmit);
 
-                            purl.setText(model.getPurl());
-                            name.setText(model.getName());
-                            category.setText(model.getCategory());
-                            description.setText(model.getDescription());
+                purl.setText(model.getPurl());
+                name.setText(model.getName());
+                category.setText(model.getCategory());
+                description.setText(model.getDescription());
 
-                            dialogPlus.show();
+                dialogPlus.show();
 
-                                submit.setOnClickListener(new View.OnClickListener() {
+                submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Map<String,Object> map=new HashMap<>();
+                        map.put("purl",purl.getText().toString());
+                        map.put("name",name.getText().toString());
+                        map.put("description",description.getText().toString());
+                        map.put("category",category.getText().toString());
+
+                        FirebaseDatabase.getInstance().getReference().child("foods")
+                                .child(getRef(position).getKey()).updateChildren(map)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
-                                    public void onClick(View view) {
-                                        Map<String,Object> map=new HashMap<>();
-                                        map.put("purl",purl.getText().toString());
-                                        map.put("name",name.getText().toString());
-                                        map.put("description",description.getText().toString());
-                                        map.put("category",category.getText().toString());
-
-                                        FirebaseDatabase.getInstance().getReference().child("foods")
-                                                .child(getRef(position).getKey()).updateChildren(map)
-                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                    @Override
-                                                    public void onSuccess(Void aVoid) {
-                                                        dialogPlus.dismiss();
-                                                    }
-                                                })
-                                                .addOnFailureListener(new OnFailureListener() {
-                                                    @Override
-                                                    public void onFailure(@NonNull Exception e) {
-                                                        dialogPlus.dismiss();
-                                                    }
-                                                });
+                                    public void onSuccess(Void aVoid) {
+                                        dialogPlus.dismiss();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        dialogPlus.dismiss();
                                     }
                                 });
+                    }
+                });
 
 
-                        }
-                    });
+            }
+        });
 
 
-                    holder.delete.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            AlertDialog.Builder builder=new AlertDialog.Builder(holder.img.getContext());
-                            builder.setTitle("Delete Panel");
-                            builder.setMessage("Delete...?");
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(holder.img.getContext());
+                builder.setTitle("Delete Panel");
+                builder.setMessage("Delete...?");
 
-                            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    FirebaseDatabase.getInstance().getReference().child("foods")
-                                            .child(getRef(position).getKey()).removeValue();
-                                }
-                            });
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseDatabase.getInstance().getReference().child("foods")
+                                .child(getRef(position).getKey()).removeValue();
+                    }
+                });
 
-                            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
 
-                                }
-                            });
+                    }
+                });
 
-                            builder.show();
-                        }
-                    });
+                builder.show();
+            }
+        });
 
     } // End of OnBindViewMethod
 
@@ -124,8 +124,8 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-       View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.singlerow,parent,false);
-       return new myviewholder(view);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.singlerow,parent,false);
+        return new myviewholder(view);
     }
 
 
