@@ -18,7 +18,7 @@ public class Delete<ActivityDeleteDataBinding> extends AppCompatActivity {
         binding = ActivityDeleteDataBinding.inflate(getResources().getLayout());
         setContentView(R.layout.activity_delete);
 
-        binding.
+        binding.Delete.setOnclic
 
     }
 }
