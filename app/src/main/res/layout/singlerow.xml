@@ -84,7 +84,7 @@
                 android:layout_width="174dp"
                 android:layout_height="37dp"
                 android:layout_margin="5dp"
-                android:src="@drawable/delete" />
+                android:src="@drawable/delete1" />
 
         </LinearLayout>
 
